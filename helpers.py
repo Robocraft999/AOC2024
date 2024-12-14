@@ -56,6 +56,20 @@ class V2:
             return V2(y, x)
         else:
             raise TypeError(f"Unsupported type {type(other)} for operation '-'")
+        
+    def __mul__(self, other):
+        if isinstance(other, V2):
+            x = self.x * other.x
+            y = self.y * other.y
+            return V2(y, x)
+        elif isinstance(other, int):
+            return V2(self.y * other, self.x * other)
+        elif isinstance(other, tuple) and len(other) == 2:
+            x = self.x * other[1]
+            y = self.y * other[0]
+            return V2(y, x)
+        else:
+            raise TypeError(f"Unsupported type {type(other)} for operation '*'")
     
     def __floordiv__(self, other):
         if isinstance(other, V2):
@@ -97,6 +111,15 @@ class V2:
             return self.y
         elif index == 1:
             return self.x
+        raise IndexError(index)
+    
+    def __setitem__(self, index, value):
+        if index == 0:
+            self.y = value
+            return self
+        elif index == 1:
+            self.x = value
+            return self
         raise IndexError(index)
 
     def rotated90(self):
