@@ -1,14 +1,16 @@
 # Experimental!
-&fras "testinput.txt"
+0
+&fras "input.txt"
 ⊜(⊜⋕⊸≠@ )⊸≠@\n
 ⤸ 1
 ≡⍆
-.
-⤸ 1
+°⊟
 
-PickAndRotate ← ↻1 ⟜⊡ 1_0
-a             ← [[1 0 4] [2 3 5]]
-a
-PickAndRotate a
-PickAndRotate a
-# ⍥(⊡ 1_0 ⊸↻1) ⊸⧻
+RotatePick ← ⊃(↻1)⊢
+Amount ← (
+  RotatePick
+  ⊃(⟜=⋅⊙.)(⊙)
+  ×/+:
+  :⊃(⟜⋅⋅∘)(+⋅⊙⋅∘) :
+)
+◌◌⍥(Amount)⧻.
