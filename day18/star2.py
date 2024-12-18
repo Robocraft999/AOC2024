@@ -11,7 +11,6 @@ def print_grid(grid):
         print()
 
 def pathfind(grid, start, end):
-    #visited = np.zeros(grid.shape, bool)
     visited = set()
     todo = Queue()
     todo.put((start, 0))
@@ -43,11 +42,9 @@ print_grid(grid)
 
 print(pathfind(grid, start, end))
 
-#path = astar(grid, start, end)
 watcher = tqdm(lines[::-1])
 for x,y in watcher:
     grid[y][x] = 0
-    #path = astar(grid, start, V2(size-1,size-1))
     distance = pathfind(grid, start, end)
     if distance:
         watcher.close()
