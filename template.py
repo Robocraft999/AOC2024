@@ -1,4 +1,6 @@
 from helpers import *
+import numpy as np
+from tqdm import tqdm
 path, testpath = get_input()
 
 res = 0
