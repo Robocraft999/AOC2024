@@ -106,6 +106,9 @@ class V2:
             return self.x == value[1] and self.y == value[0]
         return False
     
+    def __abs__(self):
+        return abs(self.x) + abs(self.y)
+    
     def __getitem__(self, index):
         if index == 0:
             return self.y
