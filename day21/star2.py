@@ -123,7 +123,7 @@ for line in list(open(path))[:]:
         last = "A"
         l = 0
         for s in comb:
-            x = calc_length(s, last, 2)
+            x = calc_length(s, last, 25)
             l += x
             last = s
         sums.append(l)
