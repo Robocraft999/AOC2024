@@ -143,6 +143,9 @@ def imap(string):
 
 def splitmap(string, mapper, char=None):
     return list(map(mapper, string.split(char)))
+
+def nop(x):
+    return x
     
 ### Parsing
 
